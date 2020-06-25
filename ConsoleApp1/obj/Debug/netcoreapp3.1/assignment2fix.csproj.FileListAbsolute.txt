@@ -1,0 +1,13 @@
+A:\ASM\project2fix\ConsoleApp1\obj\Debug\netcoreapp3.1\assignment2fix.csprojAssemblyReference.cache
+A:\ASM\project2fix\ConsoleApp1\obj\Debug\netcoreapp3.1\assignment2fix.AssemblyInfoInputs.cache
+A:\ASM\project2fix\ConsoleApp1\obj\Debug\netcoreapp3.1\assignment2fix.AssemblyInfo.cs
+A:\ASM\project2fix\ConsoleApp1\obj\Debug\netcoreapp3.1\assignment2fix.csproj.CoreCompileInputs.cache
+A:\ASM\project2fix\ConsoleApp1\bin\Debug\netcoreapp3.1\assignment2fix.exe
+A:\ASM\project2fix\ConsoleApp1\bin\Debug\netcoreapp3.1\assignment2fix.deps.json
+A:\ASM\project2fix\ConsoleApp1\bin\Debug\netcoreapp3.1\assignment2fix.runtimeconfig.json
+A:\ASM\project2fix\ConsoleApp1\bin\Debug\netcoreapp3.1\assignment2fix.runtimeconfig.dev.json
+A:\ASM\project2fix\ConsoleApp1\bin\Debug\netcoreapp3.1\assignment2fix.dll
+A:\ASM\project2fix\ConsoleApp1\bin\Debug\netcoreapp3.1\assignment2fix.pdb
+A:\ASM\project2fix\ConsoleApp1\obj\Debug\netcoreapp3.1\assignment2fix.dll
+A:\ASM\project2fix\ConsoleApp1\obj\Debug\netcoreapp3.1\assignment2fix.pdb
+A:\ASM\project2fix\ConsoleApp1\obj\Debug\netcoreapp3.1\assignment2fix.genruntimeconfig.cache
