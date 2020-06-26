@@ -8,30 +8,41 @@ namespace assignment2fix
     class ClassRoom
     {
         public List<Student> Students = new List<Student>();
+        public int NumberOfStudentActual;
         public int NumberOfStudent
         {
             get
             {
                 return Students.Count;
             }
-        }
-        public void EnterInformationAddToList()
-        {
-            var enterInformation = new EnterInformation();
-            Student student = new Student();
-            student.Name = enterInformation.GetName();
-            student.Id = enterInformation.GetId();
-            student.Grades = enterInformation.GetGrade();
-            Students.Add(student);
-        }
-        public void EnterInformationOfGroup()
+        }        
+        public int EnterInformationOfGroup()
         {
             var enterInformation = new EnterInformation();
             int numberOfStudent = enterInformation.EnterNumberOfStudent();
-            for (var i = 0; i < numberOfStudent; i++)
-                EnterInformationAddToList();
+            NumberOfStudentActual = numberOfStudent + NumberOfStudent;
+            for (var i = NumberOfStudent; i < numberOfStudent; i++)
+            {
+                EnterInformationASingleStudent();
+            }
+            return NumberOfStudentActual;
         }
-      
+        public int EnterInformationASingleStudent()
+        {
+            var student = new Student();
+            student.CollectionInformation();
+            Students.Add(student);
+            return this.Students.Count;
+        }
+        public void FuntionCheckInformation()
+        {
+            var interFace = new InterfaceOfUser();
+            interFace.HeaderOfTableOfInformation();
+            foreach (Student item in Students)
+            {
+                item.returnInformationOfAStudent();
+            }
+        }
         public void CalculateAverages()
         {
             foreach (Student item in Students)
@@ -49,7 +60,7 @@ namespace assignment2fix
             {
                 foreach (Student item in Students)
                     if (item.Id == idFind)
-                        InterFace.ShowInformation(item.Name, item.Id, item.Grades);
+                        item.returnInformationOfAStudent();
             }
         }
         
