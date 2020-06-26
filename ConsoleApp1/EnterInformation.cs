@@ -67,7 +67,7 @@ namespace assignment2fix
         }
         public string EnterIdToFind()
         {
-            Console.Write("Enter ID to find: ");
+            Console.Write("Enter ID to work: ");
             string IdToFind = Console.ReadLine();
             return IdToFind;
         }
