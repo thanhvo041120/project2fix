@@ -28,20 +28,17 @@ namespace assignment2fix
                         Console.Clear();
                         Classes.EnterInformationOfGroup();
                         Console.Clear();
-                        interFace.HeaderOfTableOfInformation();
-                        foreach (Student item in Classes.Students)
-                            interFace.ShowInformation(item.Name,item.Id,item.Grades);
+                        Classes.FuntionCheckInformation();                            
                         break;
                     case 2:
                         Console.Clear();
                         isStudentExist = interFace.checkStudentExist();
-                        if (isStudentExist == 0) break;
-                        else 
+                        if (isStudentExist != 0)                       
                         {
-                            interFace.HeaderOfTableOfInformation();
-                            foreach (Student item in Classes.Students)
-                                interFace.ShowInformation(item.Name,item.Id,item.Grades);
+                            Classes.FuntionCheckInformation();
+                            break;
                         }
+                        else
                         break;
                     case 3:
                         Console.Clear();
@@ -57,7 +54,7 @@ namespace assignment2fix
                         
                         break;
                     case 6:
-                        Classes.EnterInformationAddToList();
+                        Classes.EnterInformationASingleStudent();
                         break;
                     case 7:
                         

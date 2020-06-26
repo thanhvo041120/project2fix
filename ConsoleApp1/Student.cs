@@ -19,5 +19,21 @@ namespace assignment2fix
             }
             return averageGrade = sum / Grades.Count;
         }
+        public void CollectionInformation()
+        {
+            var enterInformation = new EnterInformation();
+            this.Name = enterInformation.GetName();
+            this.Id = enterInformation.GetId();
+            this.Grades = enterInformation.GetGrade();
+        }
+        public void returnInformationOfAStudent()
+        {
+            Console.Write("|{0,-10}|{1,-10}", Name, Id);
+            foreach (float grade in Grades)
+            {
+                Console.Write("|Grade: {0,-10}", grade);
+            }
+            Console.Write("\n");            
+        }
     }
 }

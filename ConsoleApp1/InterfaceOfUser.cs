@@ -70,16 +70,7 @@ namespace assignment2fix
                     Console.Write("DONE");                    
                 }                
             }
-        }
-        public void ShowInformation(string name, string id, List<float> Grades)
-        {
-            Console.Write("|{0,-10}|{1,-10}", name, id);
-            foreach (float grade in Grades)
-            {
-                Console.Write("|Grade: {0,-10}", grade);                
-            }
-            Console.Write("\n");
-        }
+        }        
         public bool IsIdExist(string id)
         {
             ClassRoom classRoom = new ClassRoom();
