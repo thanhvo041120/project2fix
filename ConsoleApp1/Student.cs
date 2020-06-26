@@ -21,12 +21,13 @@ namespace assignment2fix
         }
         public void CollectionInformation()
         {
+            ClassRoom classRoom = new ClassRoom();
             var enterInformation = new EnterInformation();
-            this.Name = enterInformation.GetName();
-            this.Id = enterInformation.GetId();
-            this.Grades = enterInformation.GetGrade();
+            Name = enterInformation.GetName();
+            Id = enterInformation.GetId(classRoom.Students);
+            Grades = enterInformation.GetGrade();
         }
-        public void returnInformationOfAStudent()
+        public void ReturnInformationOfAStudent()
         {
             Console.Write("|{0,-10}|{1,-10}", Name, Id);
             foreach (float grade in Grades)
