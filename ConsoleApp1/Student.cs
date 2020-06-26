@@ -20,12 +20,11 @@ namespace assignment2fix
             averageGrade = sum / Grades.Count;
             return averageGrade;
         }
-        public void CollectionInformation()
+        public void CollectionInformation(List<Student>Students)
         {
-            ClassRoom classRoom = new ClassRoom();
             var enterInformation = new EnterInformation();
             Name = enterInformation.GetName();
-            Id = enterInformation.GetId(classRoom.Students);
+            Id = enterInformation.GetId(Students);
             Grades = enterInformation.GetGrade();
         }
         public void ReturnInformationOfAStudent()

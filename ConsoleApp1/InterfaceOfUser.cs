@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Linq;
+using System.Xml.Serialization;
 
 namespace assignment2fix
 {
@@ -11,7 +12,6 @@ namespace assignment2fix
         public void MainMenu()
         {
             int i;
-            Console.WriteLine("\n");
             for (i = 1; i <= 40; i++) Console.Write("*");
             Console.Write("\n*         Student of a class           *\n");
             for (i = 1; i <= 40; i++) Console.Write("*");
@@ -23,6 +23,7 @@ namespace assignment2fix
             Console.Write("\n*5:Find students has fail grade        *");
             Console.Write("\n*6:Enter single student information    *");
             Console.Write("\n*7:Calculate average grade of student  *");
+            Console.Write("\n*8:Delete a student by ID              *");
             Console.Write("\n*0:Exit                                *\n");
             for (i = 1; i <= 40; i++) Console.Write("*");
             Console.Write("\nEnter your choice: ");
@@ -44,32 +45,20 @@ namespace assignment2fix
         {
             Console.WriteLine("---------------Show information of Students---------------");
             Console.WriteLine("|{0,-10}|{1,-10}|{2,-10}", "Name", "ID", "Grades");
-        }
-        public string ChangeToString(string name, string id, List<float> Grades)
-        {
-            var enterInformation = new EnterInformation();
-            StringBuilder stringOfGrades = new StringBuilder();
-            string stringOfNameAndId = string.Concat(name, id);
-            foreach (float grade in Grades)
-            {
-                stringOfGrades.Append(grade);
-            }
-            stringOfGrades.ToString();
-            string result = string.Concat(stringOfNameAndId, stringOfGrades);
-            return result;
-        }
+        }        
         public void CheckToContinue(int optionItem)
         {
             if (optionItem != 0)
             {
-                Console.WriteLine("\nDo you want to continue?[y/n]");
+                Console.Write("Finish this function\nDo you want to continue?[y/n]");
                 char choiceToContinue = char.Parse(Console.ReadLine());
                 if (choiceToContinue != 'y')
                 {
                     Console.Clear();
-                    Console.Write("DONE");                    
-                }                
+                    Console.Write("DONE");
+                }
             }
+           ;
         }        
         public bool IsIdExist(string id,List<Student> students)
         {
@@ -95,24 +84,20 @@ namespace assignment2fix
             }
             else return isStudentExist;
         }
-        public string CheckEnterId (string id, List<Student> students)
+        public string CheckEnterId (string id, List<Student>students)
         {
             if (id.Length > 9 || id.Length < 5)
             {
-                Console.Write("Enter again:");
+                Console.Write("Enter ID again:");
                 return "Error";
             }
-            else
+            else if (IsIdExist(id, students) == false)
             {
-                var checkIdExist = IsIdExist(id, students);
-                if ( checkIdExist == false)
-                {
-                    Console.WriteLine("Id existed");
-                    Console.Write("Enter again:");
-                    return "true";
-                }
-                else return id;
+                Console.WriteLine("ID existed");
+                Console.Write("Enter ID again: ");
+                return "Existed";
             }
+            else return id;
         }
     }
 }
