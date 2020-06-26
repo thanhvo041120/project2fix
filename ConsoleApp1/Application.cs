@@ -27,8 +27,6 @@ namespace assignment2fix
                     case 1:
                         Console.Clear();
                         Classes.GetInformationOfGroup();
-                        Console.Clear();
-                        Classes.FuntionCheckInformation();
                         break;
                     case 2:
                         Console.Clear();
@@ -42,7 +40,6 @@ namespace assignment2fix
                         break;
                     case 3:
                         Console.Clear();
-                        Console.WriteLine(Classes.Students.Count);
                         isStudentExist = interFace.CheckStudentExist(Classes.Students.Count);
                         if (isStudentExist == 0) break;
                         else
@@ -57,11 +54,10 @@ namespace assignment2fix
                     case 6:
                         Console.Clear();
                         Classes.GetInformationASingleStudent();
-                        Console.Clear();
-                        Classes.FuntionCheckInformation();
                         break;
                     case 7:
-                        
+                        Console.Clear();
+                        Classes.CalculateAverages();
                         break;
                     case 0: Console.Clear(); Console.Write("DONE"); break;
                     default: Console.Clear(); Console.Write("ERROR"); break;

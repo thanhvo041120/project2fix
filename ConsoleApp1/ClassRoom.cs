@@ -29,6 +29,7 @@ namespace assignment2fix
             student.CollectionInformation();
             Students.Add(student);
         }
+        //case 2: Check
         public void FuntionCheckInformation()
         {
             var interFace = new InterfaceOfUser();
@@ -38,21 +39,27 @@ namespace assignment2fix
                 item.ReturnInformationOfAStudent();
             }
         }
+        //case 7: Calculate Averages
         public void CalculateAverages()
         {
+            var interFace = new InterfaceOfUser();
             foreach (Student item in Students)
             {
+                interFace.HeaderOfTableOfInformation();
+                item.ReturnInformationOfAStudent();
                 Console.WriteLine("Average Grade is: "+item.CalculateAverageGrade()+"\n");
             }
         }
+        //case 3: Find student
         public void FindByID()
         {
             var enterInfor = new EnterInformation();
             var InterFace = new InterfaceOfUser();
             string idFind = enterInfor.EnterIdToFind();
-            if (InterFace.IsIdExist(idFind,Students) == false) Console.WriteLine("Not Found");
+            if (InterFace.IsIdExist(idFind,Students) == true) Console.WriteLine("Not Found");
             else
             {
+                InterFace.HeaderOfTableOfInformation();
                 foreach (Student item in Students)
                     if (item.Id == idFind)
                         item.ReturnInformationOfAStudent();

@@ -17,7 +17,8 @@ namespace assignment2fix
             {
                 sum = sum + item;
             }
-            return averageGrade = sum / Grades.Count;
+            averageGrade = sum / Grades.Count;
+            return averageGrade;
         }
         public void CollectionInformation()
         {

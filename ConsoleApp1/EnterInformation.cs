@@ -54,13 +54,20 @@ namespace assignment2fix
             return NumberOfGrade;
         }
         public int EnterNumberOfStudent()
-        {
-            Console.Write("\nEnter number of students: ");
-            int NumberOfStudentWantToAdd = int.Parse(Console.ReadLine());
-            return NumberOfStudentWantToAdd;
+        { 
+            var interFace = new InterfaceOfUser();
+            int Number;
+            Console.Write("\nEnter number of students: ");            
+            do
+            {
+                string NumberOfStudentWantToAdd = Console.ReadLine();
+                Number = interFace.CheckAndReturn(NumberOfStudentWantToAdd);
+            } while (Number == 0);
+            return Number;
         }
         public string EnterIdToFind()
         {
+            Console.Write("Enter ID to find: ");
             string IdToFind = Console.ReadLine();
             return IdToFind;
         }
