@@ -110,19 +110,18 @@ namespace assignment2fix
             var EnterID = new EnterInformation();
             var InterFace = new InterfaceOfUser();
             string IdToDelete = EnterID.EnterIdToFind();
-            foreach(Student student in Students)
+
+            if (InterFace.IsIdExist(IdToDelete, Students) == true)
             {
-                if (InterFace.IsIdExist(IdToDelete, Students) == true)
-                {
-                    Console.WriteLine("Student does not exist");
-                }
-                else
-                {
-                    Students.RemoveAll(s => s.Id == IdToDelete);
-                    Console.WriteLine("Deleted");
-                    break;
-                }
+                Console.WriteLine("Student does not exist");
             }
+            else 
+            foreach (Student student in Students)
+            {
+                 Students.RemoveAll(s => string.Compare(s.Id,IdToDelete,true)==0);
+                 Console.WriteLine("Deleted");
+                 break;
+            }            
         }
     }
 }

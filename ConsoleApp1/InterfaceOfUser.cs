@@ -69,7 +69,7 @@ namespace assignment2fix
         }        
         public bool IsIdExist(string id,List<Student> students)
         {
-            var student =students.SingleOrDefault(s => string.Compare(s.Id,id)==0);
+            var student =students.SingleOrDefault(s => string.Compare(s.Id,id,true)==0);
             if (student == null) return true;
             else return false;
         }
