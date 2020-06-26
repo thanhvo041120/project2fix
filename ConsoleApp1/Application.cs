@@ -9,6 +9,7 @@ namespace assignment2fix
         public void Active()
         {
             ClassRoom Classes = new ClassRoom();
+            char askToContinue;
             var enterChoice = new EnterInformation();
             var interFace = new InterfaceOfUser();
             int optionItem;
@@ -77,9 +78,8 @@ namespace assignment2fix
                     case 0: Console.Clear(); Console.Write("DONE"); break;
                     default: Console.Clear(); Console.Write("ERROR"); break;
                 }
-                interFace.CheckToContinue(optionItem);
-                Console.Clear();
-            } while (optionItem != 0);
+                askToContinue=interFace.CheckToContinue(optionItem);                
+            } while (optionItem != 0&&askToContinue == 'y');
         }
     }
 }

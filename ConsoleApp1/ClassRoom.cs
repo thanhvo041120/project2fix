@@ -83,7 +83,7 @@ namespace assignment2fix
             {
                 if (highestGrade == item.CalculateAverageGrade())
                 {
-                    Console.WriteLine("Average Grade is: " + highestGrade);
+                    Console.WriteLine("Hightest average Grade is: " + highestGrade);
                     interFace.HeaderOfTableOfInformation();
                     item.ReturnInformationOfAStudent();
                 }
