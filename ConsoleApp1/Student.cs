@@ -17,16 +17,18 @@ namespace assignment2fix
             {
                 sum = sum + item;
             }
-            return averageGrade = sum / Grades.Count;
+            averageGrade = sum / Grades.Count;
+            return averageGrade;
         }
         public void CollectionInformation()
         {
+            ClassRoom classRoom = new ClassRoom();
             var enterInformation = new EnterInformation();
-            this.Name = enterInformation.GetName();
-            this.Id = enterInformation.GetId();
-            this.Grades = enterInformation.GetGrade();
+            Name = enterInformation.GetName();
+            Id = enterInformation.GetId(classRoom.Students);
+            Grades = enterInformation.GetGrade();
         }
-        public void returnInformationOfAStudent()
+        public void ReturnInformationOfAStudent()
         {
             Console.Write("|{0,-10}|{1,-10}", Name, Id);
             foreach (float grade in Grades)

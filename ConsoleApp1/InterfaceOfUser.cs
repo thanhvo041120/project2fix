@@ -36,7 +36,7 @@ namespace assignment2fix
                 return resultOfChecking;
             else
             {
-                Console.WriteLine("Enter again: ");
+                Console.Write("Enter again: ");
                 return 0;
             }
         }
@@ -71,11 +71,10 @@ namespace assignment2fix
                 }                
             }
         }        
-        public bool IsIdExist(string id)
+        public bool IsIdExist(string id,List<Student> students)
         {
-            ClassRoom classRoom = new ClassRoom();
-            var student=classRoom.Students.SingleOrDefault(s => s.Id == id);
-            if (student != null) return true;
+            var student =students.SingleOrDefault(s => string.Compare(s.Id,id)==0);
+            if (student == null) return true;
             else return false;
         }
         public int CheckNumberOfGrade(int numberOfGrades)
@@ -87,10 +86,8 @@ namespace assignment2fix
             }
             else return numberOfGrades;
         }
-        public int checkStudentExist()
+        public int CheckStudentExist(int isStudentExist)
         {
-            ClassRoom Classes = new ClassRoom();
-            int isStudentExist = Classes.NumberOfStudent;
             if (isStudentExist == 0)
             {
                 Console.Write("Don't have student");
@@ -98,7 +95,7 @@ namespace assignment2fix
             }
             else return isStudentExist;
         }
-        public string CheckEnterId (string id)
+        public string CheckEnterId (string id, List<Student> students)
         {
             if (id.Length > 9 || id.Length < 5)
             {
@@ -107,7 +104,8 @@ namespace assignment2fix
             }
             else
             {
-                if (IsIdExist(id) == true)
+                var checkIdExist = IsIdExist(id, students);
+                if ( checkIdExist == false)
                 {
                     Console.WriteLine("Id existed");
                     Console.Write("Enter again:");
