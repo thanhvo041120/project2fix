@@ -89,6 +89,7 @@ namespace assignment2fix
                 }
             }
         }
+        //Case 5: Find fail grades
         public void FindFailGrade()
         {
             var interFace = new InterfaceOfUser();
@@ -103,6 +104,7 @@ namespace assignment2fix
                 }
             }
         }
+        //Case 8: Delete student
         public void DeleteStudentById()
         {
             var EnterID = new EnterInformation();
@@ -111,7 +113,9 @@ namespace assignment2fix
             foreach(Student student in Students)
             {
                 if (InterFace.IsIdExist(IdToDelete, Students) == true)
+                {
                     Console.WriteLine("Student does not exist");
+                }
                 else
                 {
                     Students.RemoveAll(s => s.Id == IdToDelete);

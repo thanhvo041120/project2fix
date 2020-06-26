@@ -22,7 +22,7 @@ namespace assignment2fix
                 {
                     userInput = enterChoice.EnterUserInput();
                     optionItem = interFace.CheckAndReturn(userInput);
-                } while (optionItem == 0);
+                } while (optionItem == -1);
                 switch (optionItem)
                 {
                     case 1:
@@ -73,7 +73,10 @@ namespace assignment2fix
                         break;
                     case 8:
                         Console.Clear();
-                        Classes.DeleteStudentById();
+                        isStudentExist = interFace.CheckStudentExist(Classes.Students.Count);
+                        if (isStudentExist == 0) break;
+                        else
+                            Classes.DeleteStudentById();
                         break;
                     case 0: Console.Clear(); Console.Write("DONE"); break;
                     default: Console.Clear(); Console.Write("ERROR"); break;

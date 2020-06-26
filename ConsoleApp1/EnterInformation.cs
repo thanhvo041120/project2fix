@@ -49,8 +49,14 @@ namespace assignment2fix
         }
         public int EnterNumberOfGrades()
         {
+            var interFace = new InterfaceOfUser();
+            int NumberOfGrade;
             Console.Write("Enter number of grades (1-->2): ");
-            int NumberOfGrade = int.Parse(Console.ReadLine());
+            do
+            {
+                string NumberOfGradeWantToAdd = Console.ReadLine();
+                NumberOfGrade = interFace.CheckAndReturn(NumberOfGradeWantToAdd);
+            } while (NumberOfGrade == -1);
             return NumberOfGrade;
         }
         public int EnterNumberOfStudent()
@@ -62,7 +68,7 @@ namespace assignment2fix
             {
                 string NumberOfStudentWantToAdd = Console.ReadLine();
                 Number = interFace.CheckAndReturn(NumberOfStudentWantToAdd);
-            } while (Number == 0);
+            } while (Number == -1);
             return Number;
         }
         public string EnterIdToFind()

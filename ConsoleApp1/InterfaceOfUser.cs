@@ -38,7 +38,7 @@ namespace assignment2fix
             else
             {
                 Console.Write("Enter again: ");
-                return 0;
+                return -1;
             }
         }
         public void HeaderOfTableOfInformation()
@@ -51,7 +51,7 @@ namespace assignment2fix
             char choiceToContinue = 'y';
             if (optionItem != 0)
             {
-                Console.Write("Finish this function\nDo you want to continue?[y/n]");
+                Console.Write("Finish\nDo you want to continue?[y/n]");
                 choiceToContinue = char.Parse(Console.ReadLine());
                 if (choiceToContinue =='n')
                 {
