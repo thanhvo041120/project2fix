@@ -83,7 +83,7 @@ namespace assignment2fix
             {
                 if (highestGrade == item.CalculateAverageGrade())
                 {
-                    Console.WriteLine("Average Grade is: " + highestGrade);
+                    Console.WriteLine("Hightest average Grade is: " + highestGrade);
                     interFace.HeaderOfTableOfInformation();
                     item.ReturnInformationOfAStudent();
                 }
@@ -106,22 +106,17 @@ namespace assignment2fix
         public void DeleteStudentById()
         {
             var EnterID = new EnterInformation();
-            int i = 0;
-            foreach (Student item in Students)
+            var InterFace = new InterfaceOfUser();
+            string IdToDelete = EnterID.EnterIdToFind();
+            foreach(Student student in Students)
             {
-                if (item.Id == EnterID.EnterIdToFind())
-                {
-                    break;
-                }
-                else i++;
-                if(i==Students.Count)
-                {
+                if (InterFace.IsIdExist(IdToDelete, Students) == true)
                     Console.WriteLine("Student does not exist");
-                }
                 else
                 {
-                    Students.Remove(item);
+                    Students.RemoveAll(s => s.Id == IdToDelete);
                     Console.WriteLine("Deleted");
+                    break;
                 }
             }
         }

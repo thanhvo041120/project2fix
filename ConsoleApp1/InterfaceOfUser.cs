@@ -46,19 +46,26 @@ namespace assignment2fix
             Console.WriteLine("---------------Show information of Students---------------");
             Console.WriteLine("|{0,-10}|{1,-10}|{2,-10}", "Name", "ID", "Grades");
         }        
-        public void CheckToContinue(int optionItem)
+        public char CheckToContinue(int optionItem)
         {
+            char choiceToContinue = 'y';
             if (optionItem != 0)
             {
                 Console.Write("Finish this function\nDo you want to continue?[y/n]");
-                char choiceToContinue = char.Parse(Console.ReadLine());
-                if (choiceToContinue != 'y')
+                choiceToContinue = char.Parse(Console.ReadLine());
+                if (choiceToContinue =='n')
                 {
                     Console.Clear();
                     Console.Write("DONE");
+                    return choiceToContinue;
+                }
+                else
+                {
+                    Console.Clear();
+                    return choiceToContinue;
                 }
             }
-           ;
+            return choiceToContinue;
         }        
         public bool IsIdExist(string id,List<Student> students)
         {
@@ -79,7 +86,7 @@ namespace assignment2fix
         {
             if (isStudentExist == 0)
             {
-                Console.Write("Don't have student");
+                Console.WriteLine("Don't have student");
                 return 0;
             }
             else return isStudentExist;

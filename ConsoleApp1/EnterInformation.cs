@@ -57,7 +57,7 @@ namespace assignment2fix
         { 
             var interFace = new InterfaceOfUser();
             int Number;
-            Console.Write("\nEnter number of students: ");            
+            Console.Write("Enter number of students: ");            
             do
             {
                 string NumberOfStudentWantToAdd = Console.ReadLine();
@@ -67,7 +67,7 @@ namespace assignment2fix
         }
         public string EnterIdToFind()
         {
-            Console.Write("Enter ID to find: ");
+            Console.Write("Enter ID to work: ");
             string IdToFind = Console.ReadLine();
             return IdToFind;
         }
