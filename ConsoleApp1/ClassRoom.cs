@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.ComponentModel;
 
 namespace assignment2fix
 {
@@ -10,7 +12,7 @@ namespace assignment2fix
         public List<Student> Students = new List<Student>();
         public int NumberOfStudentActual;
         //Case 1: Enter a group
-        public int GetInformationOfGroup()
+        public void GetInformationOfGroup()
         {
             var enterInformation = new EnterInformation();
             int numberOfStudent = enterInformation.EnterNumberOfStudent();
@@ -20,13 +22,12 @@ namespace assignment2fix
                 Console.Clear();
                 GetInformationASingleStudent();
             }
-            return NumberOfStudentActual;
         }
-        //Case 2: Enter a student
+        //Case 6: Enter a student
         public void GetInformationASingleStudent()
         {
             var student = new Student();
-            student.CollectionInformation();
+            student.CollectionInformation(Students);
             Students.Add(student);
         }
         //case 2: Check
@@ -56,6 +57,7 @@ namespace assignment2fix
             var enterInfor = new EnterInformation();
             var InterFace = new InterfaceOfUser();
             string idFind = enterInfor.EnterIdToFind();
+            Console.Clear();
             if (InterFace.IsIdExist(idFind,Students) == true) Console.WriteLine("Not Found");
             else
             {
@@ -65,6 +67,63 @@ namespace assignment2fix
                         item.ReturnInformationOfAStudent();
             }
         }
-        
+        //case 4: Find Student has highest grade
+        public void FindStudentsHaveHighestAverageGrade()
+        {
+            float highestGrade;
+            var interFace = new InterfaceOfUser();
+            List<float> AverageGradeTemp = new List<float>();
+            foreach (Student item in Students)
+            {
+                AverageGradeTemp.Add(item.CalculateAverageGrade());
+            }
+            AverageGradeTemp.Sort();
+            highestGrade = AverageGradeTemp[AverageGradeTemp.Count - 1];
+            foreach (Student item in Students)
+            {
+                if (highestGrade == item.CalculateAverageGrade())
+                {
+                    Console.WriteLine("Average Grade is: " + highestGrade);
+                    interFace.HeaderOfTableOfInformation();
+                    item.ReturnInformationOfAStudent();
+                }
+            }
+        }
+        public void FindFailGrade()
+        {
+            var interFace = new InterfaceOfUser();
+            interFace.HeaderOfTableOfInformation();
+            foreach (Student item in Students)
+            {
+                float AverageGrade = item.CalculateAverageGrade();
+                if (AverageGrade < 5)
+                {
+                     item.ReturnInformationOfAStudent();
+                     Console.WriteLine("Average grade is: " + AverageGrade);                    
+                }
+            }
+        }
+        public void DeleteStudentById()
+        {
+            var EnterID = new EnterInformation();
+            int i = 0;
+            foreach (Student item in Students)
+            {
+                if (item.Id == EnterID.EnterIdToFind())
+                {
+                    break;
+                }
+                else i++;
+                if(i==Students.Count)
+                {
+                    Console.WriteLine("Student does not exist");
+                }
+                else
+                {
+                    Students.Remove(item);
+                    Console.WriteLine("Deleted");
+                }
+            }
+        }
     }
 }

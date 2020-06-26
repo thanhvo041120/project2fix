@@ -46,10 +46,18 @@ namespace assignment2fix
                             Classes.FindByID();
                         break;
                     case 4:
-                 
+                        Console.Clear();
+                        isStudentExist = interFace.CheckStudentExist(Classes.Students.Count);
+                        if (isStudentExist == 0) break;
+                        else
+                            Classes.FindStudentsHaveHighestAverageGrade();
                         break;
                     case 5:
-                        
+                        Console.Clear();
+                        isStudentExist = interFace.CheckStudentExist(Classes.Students.Count);
+                        if (isStudentExist == 0) break;
+                        else
+                            Classes.FindFailGrade();
                         break;
                     case 6:
                         Console.Clear();
@@ -57,7 +65,14 @@ namespace assignment2fix
                         break;
                     case 7:
                         Console.Clear();
-                        Classes.CalculateAverages();
+                        isStudentExist = interFace.CheckStudentExist(Classes.Students.Count);
+                        if (isStudentExist == 0) break;
+                        else
+                            Classes.CalculateAverages();
+                        break;
+                    case 8:
+                        Console.Clear();
+                        Classes.DeleteStudentById();
                         break;
                     case 0: Console.Clear(); Console.Write("DONE"); break;
                     default: Console.Clear(); Console.Write("ERROR"); break;

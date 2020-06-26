@@ -17,7 +17,7 @@ namespace assignment2fix
             string Name = Console.ReadLine();
             return Name;
         }
-        public string GetId(List<Student> students)
+        public string GetId(List<Student>students)
         {
             var interFace = new InterfaceOfUser();
             string checkId;
@@ -26,7 +26,7 @@ namespace assignment2fix
             do
             {
                 ID = Console.ReadLine();
-                checkId = interFace.CheckEnterId(ID, students);
+                checkId = interFace.CheckEnterId(ID,students);
             } while (checkId != ID);
             return ID;
         }
