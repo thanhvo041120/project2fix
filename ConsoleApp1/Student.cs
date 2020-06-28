@@ -15,7 +15,7 @@ namespace assignment2fix
             float sum=0;
             foreach(float item in Grades)
             {
-                sum = sum + item;
+                sum += item;
             }
             averageGrade = sum / Grades.Count;
             return averageGrade;
