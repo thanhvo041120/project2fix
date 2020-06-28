@@ -21,12 +21,12 @@ namespace assignment2fix
             Console.Write("\n*3:Search student by ID                *");
             Console.Write("\n*4:Find students has highest grade     *");
             Console.Write("\n*5:Find students has fail grade        *");
-            Console.Write("\n*6:Enter single student information    *");
+            Console.Write("\n*6:Insert a new student information    *");
             Console.Write("\n*7:Calculate average grade of student  *");
             Console.Write("\n*8:Delete a student by ID              *");
             Console.Write("\n*0:Exit                                *\n");
             for (i = 1; i <= 40; i++) Console.Write("*");
-            Console.Write("\nEnter your choice: ");
+            Console.Write("\nEnter your choice (0--->8): ");
         }
         public int CheckAndReturn(string Variable)
         {
@@ -43,7 +43,7 @@ namespace assignment2fix
         }
         public void HeaderOfTableOfInformation()
         {
-            Console.WriteLine("---------------Show information of Students---------------");
+            Console.WriteLine("-----------Show information of Students-----------");
             Console.WriteLine("|{0,-10}|{1,-10}|{2,-10}", "Name", "ID", "Grades");
         }        
         public char CheckToContinue(int optionItem)

@@ -79,7 +79,7 @@ namespace assignment2fix
                             Classes.DeleteStudentById();
                         break;
                     case 0: Console.Clear(); Console.Write("DONE"); break;
-                    default: Console.Clear(); Console.Write("ERROR"); break;
+                    default: Console.Clear(); Console.WriteLine("ERROR"); break;
                 }
                 askToContinue=interFace.CheckToContinue(optionItem);                
             } while (optionItem != 0&&askToContinue == 'y');
